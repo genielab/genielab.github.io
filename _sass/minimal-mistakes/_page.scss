@@ -5,7 +5,6 @@
 #main {
   @include clearfix;
   margin-left: auto;
-  margin-top: 2em;
   margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
@@ -34,6 +33,7 @@
 
   .page__inner-wrap {
     float: left;
+    margin-top: 1em;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
@@ -55,7 +55,6 @@
 .page__title {
   margin-top: 0;
   line-height: 1;
-  font-weight: $roboto-bold;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -76,15 +75,12 @@
   p,
   li,
   dl {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
-    line-height: 1.4;
-    letter-spacing: -0.4px;
-    word-spacing: 0.8px;
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
@@ -97,6 +93,8 @@
 
   a:not(.btn) {
     &:hover {
+      text-decoration: underline;
+
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
       }
@@ -155,7 +153,6 @@
     .wrapper {
       padding-left: 1em;
       padding-right: 1em;
-      // background-color: rgba(0, 0, 0, 0.3);
 
       @include breakpoint($x-large) {
         max-width: $x-large;

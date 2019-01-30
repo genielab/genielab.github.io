@@ -7,23 +7,17 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-
-//additional styling
-
-.navbar-brand-logo > img{
+.navbar-brand-logo>img {
   height: 60px;
   width: 75px;
   display: block;
 }
 
+// to increase display size of header image for posts
 .page__hero--overlay {
-  height: 500px;
+    padding: 8em 0;
 }
 
-.page__hero--overlay .wrapper {
-  padding-top: 5em;
-}
-
-.recent-stories {
-  font-size: 1em;
+.page {
+  padding-right: 100px;
 }

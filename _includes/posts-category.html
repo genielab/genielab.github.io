@@ -1,3 +1,29 @@
+{% comment %}
 {%- for post in site.categories[include.taxonomy] -%}
   {% include archive-single.html %}
 {%- endfor -%}
+{% endcomment %}
+
+{% assign this_taxonomy = include.taxonomy %}
+{% assign postsInYear = site.posts | where: "categories",this_taxonomy | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+<ul class="taxonomy__index">
+  {% for year in postsInYear %}
+  <li>
+    <a href="#{{ year.name }}">
+      <strong>{{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% for year in postsInYear %}
+<section id="{{ year.name }}" class="taxonomy__section">
+  <h2 class="archive__subtitle">{{ year.name }}</h2>
+  <div class="entries-{{ page.entries_layout | default: 'list' }}">
+    {% for post in year.items %}
+    {% include archive-single.html type=page.entries_layout %}
+    {% endfor %}
+  </div>
+  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</section>
+{% endfor %}
