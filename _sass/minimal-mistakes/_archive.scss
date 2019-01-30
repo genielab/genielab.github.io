@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .archive {
+  margin-top: 1em;
   margin-bottom: 2em;
 
   @include breakpoint($large) {
@@ -18,16 +19,7 @@
 }
 
 .archive__item {
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  a:hover {
-    .archive__item-date {
-      text-decoration: none;
-    }
-  }
+  position: relative;
 }
 
 .archive__subtitle {
@@ -43,35 +35,23 @@
 }
 
 .archive__item-title {
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: $header-font-family;
-  font-weight: $roboto-bold;
+  margin-bottom: 0.25em;
+  font-family: $sans-serif-narrow;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
+  a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
 
   a + a {
     opacity: 0.5;
-  }
-}
-
-.archive__item-date {
-  padding-bottom: 10px;
-  font-size: $type-size-7;
-  color: $gray;
-
-  a:hover {
-    text-decoration: none;
   }
 }
 
@@ -81,23 +61,18 @@
     margin-top: 1em;
     border-bottom: none;
   }
-
-  .archive__item-date {
-    a:hover {
-      text-decoration: none;
-    }
-  }
 }
 
 .archive__item-excerpt {
   margin-top: 0;
   font-size: $type-size-6;
-  letter-spacing: -0.4px;
-  word-spacing: 0.8px;
-  line-height: 1.4;
 
   & + p {
     text-indent: 0;
+  }
+
+  a {
+    position: relative;
   }
 }
 
@@ -141,12 +116,6 @@
    ========================================================================== */
 
 .list__item {
-  padding-top: 2em;
-
-  .archive__item-teaser {
-    margin-bottom: 0.5em;
-  }
-
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
@@ -256,11 +225,16 @@
   @include clearfix();
   margin-bottom: 2em;
   border-bottom: 1px solid $border-color;
+
+  .archive__item-title {
+    margin-bottom: 0;
+  }
 }
 
 .feature__item {
+  position: relative;
   margin-bottom: 2em;
-  font-size: 1.25rem;
+  font-size: 1.125em;
 
   @include breakpoint($small) {
     float: left;
@@ -288,16 +262,44 @@
     }
   }
 
+  .archive__item-body {
+    padding-left: gutter(1 of 12);
+    padding-right: gutter(1 of 12);
+  }
+
+  a.btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   &--left {
+    position: relative;
     float: left;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
     clear: both;
-    font-size: 1.25rem;
+    font-size: 1.125em;
+
+    .archive__item {
+      float: left;
+    }
 
     .archive__item-teaser {
       margin-bottom: 2em;
+    }
+
+    a.btn::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
     }
 
     @include breakpoint($small) {
@@ -316,15 +318,29 @@
   }
 
   &--right {
+    position: relative;
     float: left;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
     clear: both;
-    font-size: 1.25rem;
+    font-size: 1.125em;
+
+    .archive__item {
+      float: left;
+    }
 
     .archive__item-teaser {
       margin-bottom: 2em;
+    }
+
+    a.btn::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
     }
 
     @include breakpoint($small) {
@@ -336,7 +352,7 @@
       }
 
       .archive__item-body {
-        float: right;
+        float: left;
         width: span(7 of 12);
         padding-left: gutter(0.5 of 12);
         padding-right: gutter(1 of 12);
@@ -345,15 +361,30 @@
   }
 
   &--center {
+    position: relative;
     float: left;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
     clear: both;
-    font-size: 1.25rem;
+    font-size: 1.125em;
+
+    .archive__item {
+      float: left;
+      width: 100%;
+    }
 
     .archive__item-teaser {
       margin-bottom: 2em;
+    }
+
+    a.btn::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
     }
 
     @include breakpoint($small) {

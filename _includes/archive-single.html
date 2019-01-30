@@ -1,21 +1,18 @@
-{% if post.teaser_image_path %}
-  {% capture teaser %}{{ post.teaser_image_path }}{% endcapture %}
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
 
 {% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" | truncate: 40 %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
-  {% assign title = post.title | truncate: 40 %}
+  {% assign title = post.title %}
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if post.date %}
-      <div class="archive__item-date"><i><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></i></div>
-    {% endif %}
-    {% if teaser %}
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=
           {% if teaser contains "://" %}
