@@ -7,12 +7,29 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+body {
+  font-size: 80%;
+}
+
 .navbar-brand-logo>img {
   height: 60px;
   width: 75px;
   display: block;
 }
 
+.feature__wrapper {
+  border-bottom: 0px;
+}
+
+.published_meta {
+  color: #898c8f;
+  font-family: "Open Sans",sans-serif;
+  font-size: .75em;
+  font-style: italic;
+}
+.archive__item-excerpt {
+  margin-top: 1em;
+}
 // to increase display size of header image for posts
 .page__hero--overlay {
     padding: 8em 0;
@@ -20,4 +37,16 @@
 
 .page {
   padding-right: 100px;
+}
+
+.highlight pre {
+  color: #ffffff;
+}
+// datatable customization
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
+  font-size:80%;
+}
+
+.pagination li a {
+  font-size: 80%;
 }

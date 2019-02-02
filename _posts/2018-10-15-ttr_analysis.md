@@ -18,7 +18,8 @@ tags:
   - Ticket to Ride
   - Network Analysis
 permalink: /data-stories/:title/
-
+custom_js :
+    - assets/custom/ttr_main.js
 ---
 
 In this post, I will be sharing some of the results of my computational analysis on Ticket to ride board game.
@@ -151,7 +152,7 @@ ecc = nx.eccentricity(G)
 
 All cities with maximum and minimum eccentricities are listed below:
 
-<div style="float:left;width:100%;font-size:medium;">
+<div style="float:left;width:100%;">
 <div style="float:left;width:40%;margin:20px;">
 <p>Cities with maximum eccentricities</p>
 <table border="1" style="width:100%;">
@@ -277,181 +278,415 @@ cc = nx.closeness_centrality(G, distance='weight')
 bc = nx.betweenness_centrality(G, weight='weight')
 ```
 
-Listed below are top-10 cities by each centrality measure:
-
-<div style="float:left;width:100%;font-size:medium;">
-    <div style="float:left;width:25%;margin:20px;">
-        <p>Top-10 Degree centrality</p>
-        <table border="1" style="width:100%;">
-          <thead>
-            <tr style="text-align: right;">
-              <th>city</th>
-              <th>dc</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Paris</td>
-              <td>0.152174</td>
-            </tr>
-            <tr>
-              <td>Kyiv</td>
-              <td>0.130435</td>
-            </tr>
-            <tr>
-              <td>Frankfurt</td>
-              <td>0.130435</td>
-            </tr>
-            <tr>
-              <td>Berlin</td>
-              <td>0.108696</td>
-            </tr>
-            <tr>
-              <td>Bucuresti</td>
-              <td>0.108696</td>
-            </tr>
-            <tr>
-              <td>Warszawa</td>
-              <td>0.108696</td>
-            </tr>
-            <tr>
-              <td>Constantinople</td>
-              <td>0.108696</td>
-            </tr>
-            <tr>
-              <td>Budapest</td>
-              <td>0.108696</td>
-            </tr>
-            <tr>
-              <td>Sevastopol</td>
-              <td>0.108696</td>
-            </tr>
-            <tr>
-              <td>Wien</td>
-              <td>0.108696</td>
-            </tr>
-          </tbody>
-        </table>
-    </div>
-    <div style="float:left;width:25%;margin:20px;">
-        <p>Top-10 Closeness centrality</p>
-        <table border="1" style="width:100%;">
-          <thead>
-            <tr style="text-align: right;">
-              <th>city</th>
-              <th>cc</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Wien</td>
-              <td>0.120104</td>
-            </tr>
-            <tr>
-              <td>Munchen</td>
-              <td>0.117347</td>
-            </tr>
-            <tr>
-              <td>Budapest</td>
-              <td>0.117048</td>
-            </tr>
-            <tr>
-              <td>Zagrab</td>
-              <td>0.116751</td>
-            </tr>
-            <tr>
-              <td>Venezia</td>
-              <td>0.115869</td>
-            </tr>
-            <tr>
-              <td>Frankfurt</td>
-              <td>0.113022</td>
-            </tr>
-            <tr>
-              <td>Berlin</td>
-              <td>0.111922</td>
-            </tr>
-            <tr>
-              <td>Zurich</td>
-              <td>0.109524</td>
-            </tr>
-            <tr>
-              <td>Essen</td>
-              <td>0.106977</td>
-            </tr>
-            <tr>
-              <td>Sarajevo</td>
-              <td>0.103139</td>
-            </tr>
-          </tbody>
-        </table>
-
-    </div>
-    <div style="float:left;width:25%;margin:20px;">
-        <p>Top-10 Betweenness centrality</p>
-        <table border="1" style="width:100%;">
-          <thead>
-            <tr style="text-align: right;">
-              <th>city</th>
-              <th>bc</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Frankfurt</td>
-              <td>0.206094</td>
-            </tr>
-            <tr>
-              <td>Wien</td>
-              <td>0.185461</td>
-            </tr>
-            <tr>
-              <td>Budapest</td>
-              <td>0.176931</td>
-            </tr>
-            <tr>
-              <td>Venezia</td>
-              <td>0.175206</td>
-            </tr>
-            <tr>
-              <td>Munchen</td>
-              <td>0.162112</td>
-            </tr>
-            <tr>
-              <td>Berlin</td>
-              <td>0.156821</td>
-            </tr>
-            <tr>
-              <td>Bucuresti</td>
-              <td>0.154723</td>
-            </tr>
-            <tr>
-              <td>Zurich</td>
-              <td>0.154051</td>
-            </tr>
-            <tr>
-              <td>Paris</td>
-              <td>0.137203</td>
-            </tr>
-            <tr>
-              <td>Warszawa</td>
-              <td>0.134599</td>
-            </tr>
-          </tbody>
-        </table>
-
-    </div>
-</div>
-
-Few observations from the table above:
-
 **_Clustering coefficient_** of a node is the ratio of number of connections in the neighborhood of a node and the number of connections if the neighborhood was fully connected.
 This ratio tells how well connected the neighborhood of the node is. If the neighborhood is fully connected, the clustering coefficient is 1 and a value close to 0 means that there are hardly any connections in the neighborhood.
-
 
 ```python
 ccoef = nx.clustering(G)
 ```
+**_connectivity_** of a node is the minimum number of nodes required to be removed to block out all the paths to the subject node. The higher value is better.
+
+Listed below is the table with all cities and their various importance measures. In the table below, `dc, bc, cc` are degree centrality, betweenness centrality and closeness centrality respectively. You may use sort option in each column
+to see the top-10 or bottom-10 by selected feature. 
+
+<div style="float:left;" class="col-md-12">
+   <p>All Cities (Nodes) - Degree, Centrality Measures and Clustering</p>
+   <table id="citiesTable" class="display col-md-12">
+     <thead>
+       <tr style="text-align: right;">
+         <th class="col-md-2">city</th>
+         <th class="col-md-2">degree</th>
+         <th class="col-md-2">dc</th>
+         <th class="col-md-2">bc</th>
+         <th class="col-md-2">cc</th>
+         <th class="col-md-2">clustering_coefficient</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>Paris</td>
+         <td>7</td>
+         <td>0.152174</td>
+         <td>0.137203</td>
+         <td>0.100656</td>
+         <td>0.285714</td>
+       </tr>
+       <tr>
+         <td>Kyiv</td>
+         <td>6</td>
+         <td>0.130435</td>
+         <td>0.127660</td>
+         <td>0.093496</td>
+         <td>0.200000</td>
+       </tr>
+       <tr>
+         <td>Frankfurt</td>
+         <td>6</td>
+         <td>0.130435</td>
+         <td>0.206094</td>
+         <td>0.113022</td>
+         <td>0.266667</td>
+       </tr>
+       <tr>
+         <td>Pamplona</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.060386</td>
+         <td>0.081129</td>
+         <td>0.400000</td>
+       </tr>
+       <tr>
+         <td>Marseille</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.118542</td>
+         <td>0.097665</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Sevastopol</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.055753</td>
+         <td>0.078498</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Constantinople</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.073816</td>
+         <td>0.087287</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Bucuresti</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.154723</td>
+         <td>0.101545</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Wilno</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.073269</td>
+         <td>0.091089</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Warszawa</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.134599</td>
+         <td>0.101099</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Budapest</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.176931</td>
+         <td>0.117048</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Berlin</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.156821</td>
+         <td>0.111922</td>
+         <td>0.300000</td>
+       </tr>
+       <tr>
+         <td>Wien</td>
+         <td>5</td>
+         <td>0.108696</td>
+         <td>0.185461</td>
+         <td>0.120104</td>
+         <td>0.200000</td>
+       </tr>
+       <tr>
+         <td>Madrid</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.085024</td>
+         <td>0.069277</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Dieppe</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.047893</td>
+         <td>0.093117</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Bruxelles</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.024771</td>
+         <td>0.100218</td>
+         <td>0.500000</td>
+       </tr>
+       <tr>
+         <td>Amsterdam</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.060789</td>
+         <td>0.099138</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Smyrna</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.041932</td>
+         <td>0.082585</td>
+         <td>0.166667</td>
+       </tr>
+       <tr>
+         <td>Petrograd</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.010628</td>
+         <td>0.070552</td>
+         <td>0.166667</td>
+       </tr>
+       <tr>
+         <td>Athina</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.057874</td>
+         <td>0.089669</td>
+         <td>0.166667</td>
+       </tr>
+       <tr>
+         <td>Sofia</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.046377</td>
+         <td>0.098081</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Essen</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.089372</td>
+         <td>0.106977</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Zagrab</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.118201</td>
+         <td>0.116751</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Sarajevo</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.057488</td>
+         <td>0.103139</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Roma</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.101932</td>
+         <td>0.101996</td>
+         <td>0.166667</td>
+       </tr>
+       <tr>
+         <td>Venezia</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.175206</td>
+         <td>0.115869</td>
+         <td>0.166667</td>
+       </tr>
+       <tr>
+         <td>Munchen</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.162112</td>
+         <td>0.117347</td>
+         <td>0.166667</td>
+       </tr>
+       <tr>
+         <td>Zurich</td>
+         <td>4</td>
+         <td>0.086957</td>
+         <td>0.154051</td>
+         <td>0.109524</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Barcelona</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.074879</td>
+         <td>0.077052</td>
+         <td>0.666667</td>
+       </tr>
+       <tr>
+         <td>Brest</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.000000</td>
+         <td>0.080844</td>
+         <td>0.666667</td>
+       </tr>
+       <tr>
+         <td>London</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.043478</td>
+         <td>0.087121</td>
+         <td>0.000000</td>
+       </tr>
+       <tr>
+         <td>Erzurum</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.003382</td>
+         <td>0.066570</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Angora</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.025121</td>
+         <td>0.077181</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Sochi</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.024334</td>
+         <td>0.071875</td>
+         <td>0.666667</td>
+       </tr>
+       <tr>
+         <td>Rostov</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.026248</td>
+         <td>0.068047</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Kharkov</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.042958</td>
+         <td>0.073482</td>
+         <td>0.000000</td>
+       </tr>
+       <tr>
+         <td>Moskva</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.014171</td>
+         <td>0.070444</td>
+         <td>0.000000</td>
+       </tr>
+       <tr>
+         <td>Smolensk</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.034300</td>
+         <td>0.077572</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Riga</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.007246</td>
+         <td>0.078767</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Palermo</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.000000</td>
+         <td>0.080420</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Danzig</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.033333</td>
+         <td>0.090909</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Brindisi</td>
+         <td>3</td>
+         <td>0.065217</td>
+         <td>0.056425</td>
+         <td>0.093117</td>
+         <td>0.333333</td>
+       </tr>
+       <tr>
+         <td>Lisboa</td>
+         <td>2</td>
+         <td>0.043478</td>
+         <td>0.000000</td>
+         <td>0.057862</td>
+         <td>1.000000</td>
+       </tr>
+       <tr>
+         <td>Cadiz</td>
+         <td>2</td>
+         <td>0.043478</td>
+         <td>0.000000</td>
+         <td>0.057862</td>
+         <td>1.000000</td>
+       </tr>
+       <tr>
+         <td>Stockholm</td>
+         <td>2</td>
+         <td>0.043478</td>
+         <td>0.001932</td>
+         <td>0.070552</td>
+         <td>0.000000</td>
+       </tr>
+       <tr>
+         <td>Kobenhavn</td>
+         <td>2</td>
+         <td>0.043478</td>
+         <td>0.033816</td>
+         <td>0.083333</td>
+         <td>0.000000</td>
+       </tr>
+       <tr>
+         <td>Edinburgh</td>
+         <td>1</td>
+         <td>0.021739</td>
+         <td>0.000000</td>
+         <td>0.064972</td>
+         <td>0.000000</td>
+       </tr>
+     </tbody>
+   </table>
+</div>
+
+Few observations we can draw from the above table are as below:
+
+From the table below, it can be observed that if you remove `Marsielle` there a `-10.35%` change in average connectivity around the network. So, if you want to
+play a blocking game, you might want to own `Marsielle` and that would freak every one out a little bit.
 
 Listed below are top-10 and bottom-10 cities by clustering coefficients. So, what these numbers mean to you? If the city you are interested
 in has a lower value, it indicates that the neighborhood is not very well connected and there is a chance for you being blocked out if someone else
@@ -460,114 +695,7 @@ connected neighborhood and there are relatively less chances that you being bloc
 keep an eye on these route segments no matter what.
 
 
-<div style="float:left;width:100%;font-size:medium;">
-<div style="float:left;width:40%;margin:20px;">
-<p>maximum clustering coefficient</p>
-<table border="1" style="width:100%;">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>clustering_coefficient</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Lisboa</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <td>Cadiz</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <td>Brest</td>
-      <td>0.666667</td>
-    </tr>
-    <tr>
-      <td>Sochi</td>
-      <td>0.666667</td>
-    </tr>
-    <tr>
-      <td>Barcelona</td>
-      <td>0.666667</td>
-    </tr>
-    <tr>
-      <td>Bruxelles</td>
-      <td>0.500000</td>
-    </tr>
-    <tr>
-      <td>Pamplona</td>
-      <td>0.400000</td>
-    </tr>
-    <tr>
-      <td>Sarajevo</td>
-      <td>0.333333</td>
-    </tr>
-    <tr>
-      <td>Zagrab</td>
-      <td>0.333333</td>
-    </tr>
-    <tr>
-      <td>Rostov</td>
-      <td>0.333333</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div style="float:left;width:40%;margin:20px;">
-<p>mimimum clustering coefficient</p>
-<table border="1" style="width:100%;">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>clustering_coefficient</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Stockholm</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <td>Moskva</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <td>Kharkov</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <td>London</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <td>Kobenhavn</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <td>Edinburgh</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <td>Petrograd</td>
-      <td>0.166667</td>
-    </tr>
-    <tr>
-      <td>Venezia</td>
-      <td>0.166667</td>
-    </tr>
-    <tr>
-      <td>Roma</td>
-      <td>0.166667</td>
-    </tr>
-    <tr>
-      <td>Athina</td>
-      <td>0.166667</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
+
 
 
 Apart from centrality measures and clustering, we can measure each city's importance by certain attacking strategies.
@@ -581,325 +709,6 @@ want to watch out routes around `Essen.` Also, its interesting that all the netw
 `London` and `Madrid`. When you remove `London`, `Edinburgh` becomes unreachable and when you remove `Madrid`, both `Lisboa` and `Cadiz` becomes
 unreachable from else where. So, if you are interested in either of these cities, you better watch out `London` or `Madrid.`
 
-<div style="float:left;width:100%;font-size:medium;">
-<div style="float:left;width:50%;padding:10px;">
-<p>Raise (%) in SP Cost</p>
-<table border="1" style="width:100%;">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>is_connected</th>
-      <th>unreachable_nodes</th>
-      <th>avg_sp_cost_change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Essen</td>
-      <td>1</td>
-      <td>0</td>
-      <td>8.24</td>
-    </tr>
-    <tr>
-      <td>Roma</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.02</td>
-    </tr>
-    <tr>
-      <td>Venezia</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.85</td>
-    </tr>
-    <tr>
-      <td>Berlin</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.81</td>
-    </tr>
-    <tr>
-      <td>Wien</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.66</td>
-    </tr>
-    <tr>
-      <td>Bucuresti</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.50</td>
-    </tr>
-    <tr>
-      <td>Budapest</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.27</td>
-    </tr>
-    <tr>
-      <td>Kyiv</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.22</td>
-    </tr>
-    <tr>
-      <td>Frankfurt</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3.10</td>
-    </tr>
-    <tr>
-      <td>Marseille</td>
-      <td>1</td>
-      <td>0</td>
-      <td>2.77</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div style="float:left;width:50%;padding:10px;">
-<p>Decrease (%) in SP Cost</p>
-<table border="1" style="width:100%;">
-  <thead>
-    <tr style="text-align: right;">
-      <th>city</th>
-      <th>is_connected</th>
-      <th>unreachable_nodes</th>
-      <th>avg_sp_cost_change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Madrid</td>
-      <td>0</td>
-      <td>2</td>
-      <td>-6.15</td>
-    </tr>
-    <tr>
-      <td>Lisboa</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-2.16</td>
-    </tr>
-    <tr>
-      <td>Cadiz</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-2.16</td>
-    </tr>
-    <tr>
-      <td>London</td>
-      <td>0</td>
-      <td>1</td>
-      <td>-1.51</td>
-    </tr>
-    <tr>
-      <td>Edinburgh</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-1.44</td>
-    </tr>
-    <tr>
-      <td>Erzurum</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-1.25</td>
-    </tr>
-    <tr>
-      <td>Stockholm</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-0.92</td>
-    </tr>
-    <tr>
-      <td>Moskva</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-0.81</td>
-    </tr>
-    <tr>
-      <td>Petrograd</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-0.69</td>
-    </tr>
-    <tr>
-      <td>Sochi</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-0.67</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-
-**_connectivity_** of a node is the minimum number of nodes required to be removed to block out all the paths to the subject node. The higher value is better.
-From the table below, it can be observed that if you remove `Marsielle` there a `-10.35%` change in average connectivity around the network. So, if you want to
-play a blocking game, you might want to own `Marsielle` and that would freak every one out a little bit.
-
-<div style="float:left;width:100%;font-size:medium;">
-    <div style="float:left;width:33%;padding:10px;">
-        <p>Drop (%) in Avg Connectivity</p>
-        <table border="1" style="width:100%;">
-            <thead>
-            <tr style="text-align: right;">
-                <th>city</th>
-                <th>avg_connectivity_change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Marseille</td>
-                <td>-10.35</td>
-            </tr>
-            <tr>
-                <td>Roma</td>
-                <td>-9.85</td>
-            </tr>
-            <tr>
-                <td>Kharkov</td>
-                <td>-8.51</td>
-            </tr>
-            <tr>
-                <td>Essen</td>
-                <td>-8.11</td>
-            </tr>
-            <tr>
-                <td>Rostov</td>
-                <td>-7.41</td>
-            </tr>
-            <tr>
-                <td>Smyrna</td>
-                <td>-7.41</td>
-            </tr>
-            <tr>
-                <td>Petrograd</td>
-                <td>-7.18</td>
-            </tr>
-            <tr>
-                <td>Pamplona</td>
-                <td>-7.08</td>
-            </tr>
-            <tr>
-                <td>Paris</td>
-                <td>-6.97</td>
-            </tr>
-            <tr>
-                <td>Dieppe</td>
-                <td>-6.97</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div style="float:left;width:33%;padding:10px;">
-        <p>Drop (%) in Avg Clustering Coeff.</p>
-        <table border="1" style="width: 100%;">
-            <thead>
-            <tr style="text-align: right;">
-                <th>city</th>
-                <th>clustering_coeff_change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Lisboa</td>
-                <td>-11.84</td>
-            </tr>
-            <tr>
-                <td>Cadiz</td>
-                <td>-11.84</td>
-            </tr>
-            <tr>
-                <td>Madrid</td>
-                <td>-11.14</td>
-            </tr>
-            <tr>
-                <td>Paris</td>
-                <td>-9.17</td>
-            </tr>
-            <tr>
-                <td>Sevastopol</td>
-                <td>-8.80</td>
-            </tr>
-            <tr>
-                <td>Sochi</td>
-                <td>-8.10</td>
-            </tr>
-            <tr>
-                <td>Wilno</td>
-                <td>-6.23</td>
-            </tr>
-            <tr>
-                <td>Constantinople</td>
-                <td>-4.13</td>
-            </tr>
-            <tr>
-                <td>Pamplona</td>
-                <td>-4.03</td>
-            </tr>
-            <tr>
-                <td>Frankfurt</td>
-                <td>-3.80</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div style="float:left;width:33%;padding:10px;">
-        <p>Drop (%) in Efficiency.</p>
-        <table border="1" style="width: 100%;">
-            <thead>
-            <tr style="text-align: right;">
-                <th>city</th>
-                <th>global_efficiency_change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Madrid</td>
-                <td>-4.30</td>
-            </tr>
-            <tr>
-                <td>Kyiv</td>
-                <td>-3.59</td>
-            </tr>
-            <tr>
-                <td>Paris</td>
-                <td>-3.16</td>
-            </tr>
-            <tr>
-                <td>Frankfurt</td>
-                <td>-2.88</td>
-            </tr>
-            <tr>
-                <td>Roma</td>
-                <td>-2.84</td>
-            </tr>
-            <tr>
-                <td>Berlin</td>
-                <td>-2.67</td>
-            </tr>
-            <tr>
-                <td>Bucuresti</td>
-                <td>-2.36</td>
-            </tr>
-            <tr>
-                <td>Marseille</td>
-                <td>-2.20</td>
-            </tr>
-            <tr>
-                <td>London</td>
-                <td>-2.10</td>
-            </tr>
-            <tr>
-                <td>Warszawa</td>
-                <td>-1.88</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 
 Since clustering coefficient indicates the strongly connected neighborhood, the higher value of it is preferred. So, you might watch to watch out cities the absense of which causes big drop
 of this factor. Also, the higher value of efficiency is desirable, so you dont want to compromise on the cities the removal of
@@ -914,228 +723,7 @@ and change in factors such as average connectivity, average clustering coefficie
 From the table below, it can be observed that `Budapest-Wien, Zagrab-Vienna, Wien-Munchen` have the high betweenness centrality. So, certainly there is
 a big competition for these segments.
 
-<div style="float:left;width:100%;font-size:medium;">
-<div style="float:left;width:33%;padding:10px;">
-    <p>Edge betweenness centrality</p>
-    <table border="1" class="dataframe">
-        <thead>
-        <tr style="text-align: right;">
-            <th>segment</th>
-            <th>edge_betweenness</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>(Budapest, Wien)</td>
-            <td>0.142879</td>
-        </tr>
-        <tr>
-            <td>(Zagrab, Venezia)</td>
-            <td>0.131673</td>
-        </tr>
-        <tr>
-            <td>(Wien, Munchen)</td>
-            <td>0.117440</td>
-        </tr>
-        <tr>
-            <td>(Frankfurt, Munchen)</td>
-            <td>0.112625</td>
-        </tr>
-        <tr>
-            <td>(Bucuresti, Budapest)</td>
-            <td>0.110365</td>
-        </tr>
-        <tr>
-            <td>(Venezia, Zurich)</td>
-            <td>0.105832</td>
-        </tr>
-        <tr>
-            <td>(Marseille, Zurich)</td>
-            <td>0.103321</td>
-        </tr>
-        <tr>
-            <td>(Berlin, Frankfurt)</td>
-            <td>0.098806</td>
-        </tr>
-        <tr>
-            <td>(Barcelona, Marseille)</td>
-            <td>0.097595</td>
-        </tr>
-        <tr>
-            <td>(Roma, Venezia)</td>
-            <td>0.090287</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</div>
-
-
 From the tables below we can access each segments importance by the amount of impact they create when they were removed.
-
-<div style="float:left;width:100%;font-size:medium;">
-    <div style="float:left;width:33%;padding:10px;">
-        <p>Drop (%) in Avg Connectivity</p>
-        <table border="1" class="dataframe">
-            <thead>
-            <tr style="text-align: right;">
-                <th>segment</th>
-                <th>avg_connectivity_change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Rostov-Kharkov</td>
-                <td>-8.47</td>
-            </tr>
-            <tr>
-                <td>Erzurum-Angora</td>
-                <td>-6.17</td>
-            </tr>
-            <tr>
-                <td>Brest-Dieppe</td>
-                <td>-5.43</td>
-            </tr>
-            <tr>
-                <td>Pamplona-Brest</td>
-                <td>-5.43</td>
-            </tr>
-            <tr>
-                <td>Petrograd-Stockholm</td>
-                <td>-4.73</td>
-            </tr>
-            <tr>
-                <td>Stockholm-Kobenhavn</td>
-                <td>-4.73</td>
-            </tr>
-            <tr>
-                <td>Kobenhavn-Essen</td>
-                <td>-4.73</td>
-            </tr>
-            <tr>
-                <td>Marseille-Roma</td>
-                <td>-4.32</td>
-            </tr>
-            <tr>
-                <td>Amsterdam-Essen</td>
-                <td>-4.25</td>
-            </tr>
-            <tr>
-                <td>Smyrna-Palermo</td>
-                <td>-3.93</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div style="float:left;width:33%;padding:10px;">
-        <p>Drop (%) in Avg Clustering Coeff.</p>
-        <table border="1" class="dataframe">
-            <thead>
-            <tr style="text-align: right;">
-                <th>segment</th>
-                <th>clustering_coeff_change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Lisboa-Cadiz</td>
-                <td>-14.85</td>
-            </tr>
-            <tr>
-                <td>Lisboa-Madrid</td>
-                <td>-13.71</td>
-            </tr>
-            <tr>
-                <td>Cadiz-Madrid</td>
-                <td>-13.71</td>
-            </tr>
-            <tr>
-                <td>Sevastopol-Sochi</td>
-                <td>-10.06</td>
-            </tr>
-            <tr>
-                <td>Barcelona-Pamplona</td>
-                <td>-6.86</td>
-            </tr>
-            <tr>
-                <td>Paris-Brest</td>
-                <td>-6.53</td>
-            </tr>
-            <tr>
-                <td>Paris-Dieppe</td>
-                <td>-5.84</td>
-            </tr>
-            <tr>
-                <td>Palermo-Roma</td>
-                <td>-5.71</td>
-            </tr>
-            <tr>
-                <td>Palermo-Brindisi</td>
-                <td>-5.71</td>
-            </tr>
-            <tr>
-                <td>Brindisi-Roma</td>
-                <td>-5.71</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div style="float:left;width:33%;padding:10px;">
-        <p>Drop (%) in Efficiency.</p>
-        <table border="1" class="dataframe">
-            <thead>
-            <tr style="text-align: right;">
-                <th>segment</th>
-                <th>global_efficiency_change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>London-Edinburgh</td>
-                <td>-2.81</td>
-            </tr>
-            <tr>
-                <td>Marseille-Roma</td>
-                <td>-1.86</td>
-            </tr>
-            <tr>
-                <td>Kobenhavn-Essen</td>
-                <td>-1.71</td>
-            </tr>
-            <tr>
-                <td>Paris-Frankfurt</td>
-                <td>-1.29</td>
-            </tr>
-            <tr>
-                <td>Bucuresti-Kyiv</td>
-                <td>-1.25</td>
-            </tr>
-            <tr>
-                <td>Berlin-Frankfurt</td>
-                <td>-1.15</td>
-            </tr>
-            <tr>
-                <td>Petrograd-Stockholm</td>
-                <td>-1.15</td>
-            </tr>
-            <tr>
-                <td>Smyrna-Palermo</td>
-                <td>-1.15</td>
-            </tr>
-            <tr>
-                <td>Palermo-Roma</td>
-                <td>-1.14</td>
-            </tr>
-            <tr>
-                <td>Warszawa-Berlin</td>
-                <td>-1.10</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<br/><br/>
-
 
 ### Route Profitability Analysis
 
@@ -1154,9 +742,9 @@ paths between a given source and destination nodes. The higher it is the better.
 the most resilient route because it takes `5` edges for anyone to block you out. In the longer routes, `Edinburgh-Athina, Kobenhavn-Erzurum, Cadiz-Stockholm` are more
 vulnerable for blockage because fo their lower edge connectivity values. So, you got to play with more caution if you were to do any of these routes.
 
-<div style="float:left;width:100%;font-size:medium;">
+<div style="float:left;" class="col-md-12">
     <p>All Destination Card Routes with shortest paths</p>
-    <table class="display">
+    <table id="table2" class="display col-md-12">
         <thead>
         <tr style="text-align: right;">
             <th>source</th>
@@ -1165,7 +753,7 @@ vulnerable for blockage because fo their lower edge connectivity values. So, you
             <th>sp_length</th>
             <th>sp_cost</th>
             <th>sp_total_points</th>
-            <th>sp_path</th>
+            <th>sp_total_route</th>
             <th>sp_profitability</th>
             <th>edge_connectivity</th>
         </tr>
