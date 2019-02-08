@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15 00:00:00+00:00
+date: 2019-02-07
 title: Playing Ticket to Ride like a computer programmer.
 excerpt: "applying network theory analysis on the ticket to ride boardgame and finding best working strategies"
 comments: true
