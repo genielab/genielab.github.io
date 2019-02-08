@@ -22,11 +22,10 @@ custom_js :
     - assets/custom/ttr_main.js
 ---
 
-Ticket-to-ride board game is one of the good strategic games. It requires that players need lot of 
-planning and strategy building in the process. But have you ever wondered how you could play this board game 
-more efficiently ?. In this article, I will share some of the results of my computational analysis 
-on Ticket-to-ride board game. Also I will discuss on how to build best strategies for this game. 
-I will be using network theory and related concepts extensively here.
+Ticket-to-ride board game is one of the good strategic games out there and itt requires that players need a lot of 
+planning and strategy building in the process. With simple application of network analysis and graph theory concepts, it is
+possible that we can play this game even more efficiently. In this article, I will share some of the my results from the 
+computational analysis on Ticket-to-ride board game. Also I will discuss on how to build best strategies for this game. 
 
 Before we proceed, let me clarify that this article is not to introduce the game or its rules to you, it is expected that the audience
 of this article are familiar with the game. Anyways, for those of you who are unfamiliar about the game and its rules, visit this page
