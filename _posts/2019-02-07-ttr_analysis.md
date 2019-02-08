@@ -369,6 +369,6 @@ for min_cut in list(nx.minimum_edge_cut(G,'Edinburgh','Athina')):
 
 ## Code 
 
-All the code used in this analysis can be downloaded from this [github repository](https://github.com/genielab/network_analysis_ticket_to_ride)
+All the code used in this analysis can be downloaded from this [github repository](https://github.com/genielab/network_analysis_ticket_to_ride){:target="_blank"}
 
 <br/>
