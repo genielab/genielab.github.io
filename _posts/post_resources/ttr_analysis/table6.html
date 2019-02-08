@@ -1,0 +1,944 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datatable</title>
+
+    <link type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<p style="font-size:medium;">
+    Table-6: Alternate Scoring Paths for Route Palermo-Moskva<br/>
+</p>
+<table id="alternateScoringTable" class="col-md-12">
+    <thead>
+    <tr>
+        <th>alternate path</th>
+        <th>length of path</th>
+        <th>cost of path</th>
+        <th>total points</th>
+        <th>path profitability</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>7</td>
+        <td>22</td>
+        <td>60</td>
+        <td>2.73</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>7</td>
+        <td>20</td>
+        <td>54</td>
+        <td>2.70</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>7</td>
+        <td>23</td>
+        <td>62</td>
+        <td>2.70</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>29</td>
+        <td>77</td>
+        <td>2.66</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>29</td>
+        <td>77</td>
+        <td>2.66</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>26</td>
+        <td>69</td>
+        <td>2.65</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>26</td>
+        <td>69</td>
+        <td>2.65</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>22</td>
+        <td>57</td>
+        <td>2.59</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>24</td>
+        <td>62</td>
+        <td>2.58</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>28</td>
+        <td>72</td>
+        <td>2.57</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>21</td>
+        <td>54</td>
+        <td>2.57</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>64</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Bucuresti, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>34</td>
+        <td>87</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>64</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>64</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>64</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>64</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>64</td>
+        <td>2.56</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Budapest, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>79</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>22</td>
+        <td>56</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Budapest, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>79</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Zagrab, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>79</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>22</td>
+        <td>56</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Bucuresti, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>79</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>22</td>
+        <td>56</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>79</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>79</td>
+        <td>2.55</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Budapest, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>71</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Budapest, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>71</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>71</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>71</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Zagrab, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>71</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>28</td>
+        <td>71</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Erzurum, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>26</td>
+        <td>66</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>26</td>
+        <td>66</td>
+        <td>2.54</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>76</td>
+        <td>2.53</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>76</td>
+        <td>2.53</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>32</td>
+        <td>81</td>
+        <td>2.53</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>23</td>
+        <td>58</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Wien, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>63</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>25</td>
+        <td>63</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>68</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Erzurum, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>23</td>
+        <td>58</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>29</td>
+        <td>73</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>68</td>
+        <td>2.52</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Wien, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>22</td>
+        <td>55</td>
+        <td>2.50</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Munchen, Wien, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>65</td>
+        <td>2.50</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Munchen, Wien, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>57</td>
+        <td>2.48</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Bucuresti, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>74</td>
+        <td>2.47</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>69</td>
+        <td>2.46</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Budapest, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>64</td>
+        <td>2.46</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Budapest, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>76</td>
+        <td>2.45</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Wilno, Riga, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>29</td>
+        <td>71</td>
+        <td>2.45</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Sevastopol, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>76</td>
+        <td>2.45</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Brindisi, Athina, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>31</td>
+        <td>76</td>
+        <td>2.45</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Erzurum, Sevastopol, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>32</td>
+        <td>78</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Roma, Venezia, Zagrab, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>61</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>61</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Sevastopol, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>61</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Sevastopol, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>61</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Erzurum, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Bucuresti, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sevastopol, Rostov, Kharkov, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Angora, Erzurum, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>66</td>
+        <td>2.44</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sarajevo, Budapest, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>73</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Sevastopol, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Warszawa, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>73</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Constantinople, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Budapest, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>56</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Brindisi, Athina, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Zagrab, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>73</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Budapest, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>73</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>68</td>
+        <td>2.43</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>8</td>
+        <td>24</td>
+        <td>58</td>
+        <td>2.42</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Erzurum, Sevastopol, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>63</td>
+        <td>2.42</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Angora, Erzurum, Sochi, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>24</td>
+        <td>58</td>
+        <td>2.42</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Sofia, Bucuresti, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>24</td>
+        <td>58</td>
+        <td>2.42</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Bucuresti, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>24</td>
+        <td>58</td>
+        <td>2.42</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Warszawa, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>65</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>65</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Roma, Venezia, Zagrab, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>22</td>
+        <td>53</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Zagrab, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>65</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Constantinople, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>29</td>
+        <td>70</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Erzurum, Sochi, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>65</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Budapest, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>65</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Constantinople, Bucuresti, Kyiv, Smolensk, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>29</td>
+        <td>70</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Sarajevo, Budapest, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>29</td>
+        <td>70</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Erzurum, Sevastopol, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>29</td>
+        <td>70</td>
+        <td>2.41</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>60</td>
+        <td>2.40</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Angora, Constantinople, Bucuresti, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>60</td>
+        <td>2.40</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>60</td>
+        <td>2.40</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Smyrna, Athina, Sofia, Constantinople, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>62</td>
+        <td>2.38</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Sarajevo, Budapest, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>62</td>
+        <td>2.38</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>8</td>
+        <td>21</td>
+        <td>50</td>
+        <td>2.38</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Wien, Warszawa, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>61</td>
+        <td>2.35</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Budapest, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>61</td>
+        <td>2.35</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>63</td>
+        <td>2.33</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Brindisi, Athina, Sofia, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>63</td>
+        <td>2.33</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Munchen, Wien, Warszawa, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>63</td>
+        <td>2.33</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Budapest, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>30</td>
+        <td>70</td>
+        <td>2.33</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Smyrna, Constantinople, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>58</td>
+        <td>2.32</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Wien, Warszawa, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>58</td>
+        <td>2.32</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Munchen, Wien, Warszawa, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>60</td>
+        <td>2.31</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>60</td>
+        <td>2.31</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Kyiv, Wilno, Petrograd, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>60</td>
+        <td>2.31</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Smyrna, Constantinople, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>26</td>
+        <td>60</td>
+        <td>2.31</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Budapest, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>53</td>
+        <td>2.30</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Wien, Warszawa, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>53</td>
+        <td>2.30</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Constantinople, Sevastopol, Rostov, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>62</td>
+        <td>2.30</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Budapest, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>27</td>
+        <td>62</td>
+        <td>2.30</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Brindisi, Athina, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>24</td>
+        <td>55</td>
+        <td>2.29</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sarajevo, Sofia, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>24</td>
+        <td>55</td>
+        <td>2.29</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Constantinople, Bucuresti, Kyiv, Kharkov, Moskva]</td>
+        <td>9</td>
+        <td>28</td>
+        <td>64</td>
+        <td>2.29</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Munchen, Wien, Warszawa, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>24</td>
+        <td>55</td>
+        <td>2.29</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Zagrab, Wien, Warszawa, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>22</td>
+        <td>50</td>
+        <td>2.27</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Smyrna, Constantinople, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>52</td>
+        <td>2.26</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Roma, Venezia, Munchen, Wien, Warszawa, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>52</td>
+        <td>2.26</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Bucuresti, Kyiv, Wilno, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>23</td>
+        <td>52</td>
+        <td>2.26</td>
+    </tr>
+    <tr>
+        <td>[Palermo, Brindisi, Athina, Sofia, Constantinople, Bucuresti, Kyiv, Smolensk, Moskva]</td>
+        <td>9</td>
+        <td>25</td>
+        <td>56</td>
+        <td>2.24</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // <th>path</th>
+        // <th>path_length</th>
+        // <th>path_cost</th>
+        // <th>path_total_points</th>
+        // <th>path_points_per_capita</th>
+
+        $('#alternateScoringTable').DataTable({
+            "columnDefs": [
+                // {
+                //     "render": function (data, type, row, meta) {
+                //         return type === 'display' && data.length > 80 ?
+                //             '<span title="' + data + '">' + data.substr(0, 80) + '...</span>' :
+                //             data;
+                //     },
+                //     "targets": 0
+                // },
+                {"width": "60%", "targets": [0]},
+                {"width": "10%", "targets": "_all"}
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>

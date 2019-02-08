@@ -11,6 +11,11 @@ body {
   font-size: 80%;
 }
 
+.page__content h2 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #c8c8c8;
+}
+
 .navbar-brand-logo>img {
   height: 60px;
   width: 75px;
@@ -21,11 +26,14 @@ body {
   border-bottom: 0px;
 }
 
+.feature__wrapper .archive__item-title {
+  padding-top:0.3em;
+  border-bottom: 0px;
+}
 .published_meta {
   color: #898c8f;
   font-family: "Open Sans",sans-serif;
-  font-size: .75em;
-  font-style: italic;
+  font-size: small;
 }
 .archive__item-excerpt {
   margin-top: 1em;
@@ -47,14 +55,23 @@ body {
   color: #ffffff;
 }
 
-p>code {
+li>code, p>code {
   color: #000000;
 }
 // datatable customization
-.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
-  font-size:80%;
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    justify-content: flex-start;
 }
 
-.pagination li a {
-  font-size: 80%;
+.dataTables_length, .dataTables_filter, .dataTables_info {
+  font-size:70%;
+  justify-content: flex-start;
+}
+
+.dataTables_paginate > .pagination li a {
+  font-size: 70%;
+}
+
+.pull-left {
+  float:left;
 }

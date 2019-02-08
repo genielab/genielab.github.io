@@ -30,12 +30,27 @@
             <h2 class="archive__item-title">{{ f.title }}</h2>
           {% endif %}
 
+
+
           <div class="published_meta">
                 {% if f.last_modified_at %}
-                    <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ f.last_modified_at | date: "%Y-%m-%d" }}">{{ f.last_modified_at | date: "%B %d, %Y" }}</time></p>
+                    <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ f.last_modified_at | date: "%Y-%m-%d" }}">{{ f.last_modified_at | date: "%B %d, %Y" }}</time>
                 {% elsif f.date %}
-                    <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ f.date | date_to_xmlschema }}">{{ f.date | date: "%B %d, %Y" }}</time></p>
+                    <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ f.date | date_to_xmlschema }}">{{ f.date | date: "%B %d, %Y" }}</time>
                 {% endif %}
+
+                {% if f.categories[0] %}
+                    in
+                    {% capture page_categories %}{% for category in f.categories %}{{ category | downcase }}#{{ category }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                    {% assign category_hashes = page_categories | split: ',' | sort %}
+                    {% for hash in category_hashes %}
+                        {% assign keyValue = hash | split: '#' %}
+                        {% capture category_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
+                        <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+                    {% endfor %}
+                {% endif %}
+
+                </p>
           </div>
 
           {% if f.excerpt %}
