@@ -1,5 +1,5 @@
 ---
-date: 2018-01-31
+date: 2019-01-31
 title: Adding custom libs to maven project
 excerpt: "simple tips & tricks on how to manage external libs in maven project"
 comments: true
