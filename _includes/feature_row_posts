@@ -30,12 +30,8 @@
             <h2 class="archive__item-title">{{ f.title }}</h2>
           {% endif %}
 
-
-
           <div class="published_meta">
-                {% if f.last_modified_at %}
-                    <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ f.last_modified_at | date: "%Y-%m-%d" }}">{{ f.last_modified_at | date: "%B %d, %Y" }}</time>
-                {% elsif f.date %}
+                {% if f.date %}
                     <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ f.date | date_to_xmlschema }}">{{ f.date | date: "%B %d, %Y" }}</time>
                 {% endif %}
 
@@ -49,7 +45,6 @@
                         <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
                     {% endfor %}
                 {% endif %}
-
                 </p>
           </div>
 
