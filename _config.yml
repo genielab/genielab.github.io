@@ -63,15 +63,17 @@ atom_feed:
 
 search                   : true # true, false (default)
 search_full_content      : true # true, false (default)
-search_provider          : algolia # lunr (default), algolia
-algolia:
-  application_id         : ZSHETU5XCV # YOUR_APPLICATION_ID
-  index_name             : genielab_blog # YOUR_INDEX_NAME
-  search_only_api_key    : 990c6f58344d743f84f435305dfd3c57 # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : true # true (default), false
-  files_to_exclude:
-    - _posts/2017-11-28-post-exclude-search.md
-
+search_provider          : google # lunr (default), algolia
+#algolia:
+#  application_id         : ZSHETU5XCV # YOUR_APPLICATION_ID
+#  index_name             : genielab_blog # YOUR_INDEX_NAME
+#  search_only_api_key    : 990c6f58344d743f84f435305dfd3c57 # YOUR_SEARCH_ONLY_API_KEY
+#  powered_by             : true # true (default), false
+#  files_to_exclude:
+#    - _posts/2017-11-28-post-exclude-search.md
+google:
+  search_engine_id        : 007962171953138836748:kxyvhxfrqf4
+  instant_search          : true
 # SEO Related
 google_site_verification : "GFoJazMiyY_IVjnZcE9TtvFbGeRYNwJLrUyok9UIz34" # Replace this with your ID, or delete
 bing_site_verification   : "6A1A6C08CCFCF3E1EBCF988AE8A98C3E"
@@ -277,7 +279,6 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-algolia
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -287,7 +288,6 @@ whitelist:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-algolia
 
 
 # Archives
