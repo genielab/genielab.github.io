@@ -110,6 +110,7 @@ author:
   avatar           : "/assets/images/profile.jpg"
   bio              : "Data Science and Data products enthusiast"
   location         : "Phoenix, AZ"
+  email            : "chintha.rakesh@gmail.com"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
