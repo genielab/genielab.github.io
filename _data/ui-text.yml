@@ -19,6 +19,7 @@ en: &DEFAULT_EN
   tags_label                 : "Tags:"
   categories_label           : "Categories:"
   date_label                 : "Published on:"
+  last_modified_label        : "Last Updated on:"
   comments_label             : "Leave a comment"
   comments_title             : "Comments"
   more_label                 : "Read more"

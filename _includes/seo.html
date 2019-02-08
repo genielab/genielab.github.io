@@ -69,6 +69,10 @@
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
 
+{% if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
+{% endif %}
+
 {% if page.excerpt %}
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
