@@ -189,7 +189,9 @@ Below is an excerpt from [BLS website](https://www.bls.gov/cpi/questions-and-ans
 CPI can be calculated as a national average or specifically by city or a specific goods or products. 
 
 ### Did the real incomes rise ?
-We collect CPI prices for few cities from 2011 and 2018 and then compare median real incomes in these cities for the periods of 2011 and 2018. Below are the results.
+We collect CPI prices for few cities from 2011 and 2018 and then compare median real incomes in these cities for the periods of 2011 and 2018. First we convert 2011 median incomes 
+grouped by city into 2018 dollars by using CPI's of both time periods. For more information on how to perform this conversion, 
+please [refer this website](http://www.in2013dollars.com/). Below are the results.
 
 <div id="chart6"></div>
 <div class="responsive-wrap">
