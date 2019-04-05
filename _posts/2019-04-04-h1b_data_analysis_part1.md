@@ -8,7 +8,7 @@ header:
   show_overlay_excerpt: false
   overlay_filter: 0.5
   caption: ""
-image_path: https://storage.googleapis.com/kaggle-datasets-images/893/1631/b233e76a75228c8362daf5ffd2ddd7d5/dataset-cover.jpg
+image_path: https://www.immi-usa.com/wp-content/uploads/2016/01/h1b-visa-2016.jpg
 resources_dir: post_resources/h1b_data_analysis/
 toc: true
 toc_sticky: true
