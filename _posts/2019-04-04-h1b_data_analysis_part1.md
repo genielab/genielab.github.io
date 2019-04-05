@@ -4,7 +4,7 @@ title: "The story of H-1B using data (Part-1): Exploratory Data Analysis"
 excerpt: "In the Part-1 of this series, we do a comprehensive data exploration and analysis on H1B visa dataset focusing primarily on demand and salary analysis."
 comments: true
 header:
-  overlay_image: https://storage.googleapis.com/kaggle-datasets-images/893/1631/b233e76a75228c8362daf5ffd2ddd7d5/dataset-cover.jpg
+  overlay_image: https://www.immi-usa.com/wp-content/uploads/2016/01/h1b-visa-2016.jpg
   show_overlay_excerpt: false
   overlay_filter: 0.5
   caption: ""

@@ -4,7 +4,7 @@ title: "The story of H-1B using data (Part-2): Cost of Living, Inflation and Hou
 excerpt: "In the Part-2 of this series, we do advanced analysis with focus on cost of living and housing affordability comparision for selected groups and also observe how inflation is affecting the real income."
 comments: true
 header:
-  overlay_image: https://storage.googleapis.com/kaggle-datasets-images/893/1631/b233e76a75228c8362daf5ffd2ddd7d5/dataset-cover.jpg
+  overlay_image: https://www.immi-usa.com/wp-content/uploads/2016/01/h1b-visa-2016.jpg
   show_overlay_excerpt: false
   overlay_filter: 0.5
   caption: ""
