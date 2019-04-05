@@ -90,10 +90,12 @@ Below are descriptions from Zillow website:
 > Zillow Rent Index (ZRI): A smoothed measure of the median estimated market rate rent across a given region and housing type. ZRI is a dollar-denominated alternative to repeat-rent indices. 
 
 We combine both ZHVI and ZRI for each city with H1B visa petitions (2018 certified only) and then calculate few metrics such 
-as median house mortgage payment for median house in respective cities. 
+as median house mortgage payment (at standard 4% annual rate nationwide) for median house in respective cities. 
 We then express it as percentage of monthly income, and also express median rent as percentage of monthly income. 
 From these two ratios, we derive both house affordability and rent affordability for all data points. 
-The higher the values of these indices are, the higher is the affordability level. Sample code excerpt is listed below:
+The higher the values of these indices are, the higher is the affordability level. 
+
+Sample code excerpt is listed below:
 
 ```python
 data_zhvi_allhomes = '/Users/genie/data/zillow/City_Zhvi_AllHomes.csv'
