@@ -184,7 +184,7 @@ The U.S. Bureau of Labor Statistics (BLS) has defined a statistical measure call
 is a weighted average of prices of "basket of goods," which is a collection of many goods and services that are commonly used by consumers. 
 Every month, the prices of these goods are measured and compared to previous prices.
 
-Below is an excerpt from [BLS website](https://www.bls.gov/cpi/questions-and-answers.html){:target="_blank"}:
+Below is an excerpt from [BLS website](https://www.bls.gov/cpi/){:target="_blank"}:
 > The Consumer Price Index (CPI) is a measure of the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services.
 > The CPI represents all goods and services purchased for consumption by the reference population (U or W). BLS has classified all expenditure items into more than 200 categories, arranged into eight major groups (food and beverages, housing, apparel, transportation, medical care, recreation, education and communication, and other goods and services). Included within these major groups are various government-charged user fees, such as water and sewerage charges, auto registration fees, and vehicle tolls.
 
