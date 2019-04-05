@@ -117,7 +117,7 @@ places such as Austin is getting more charm when compared to big centers such as
 
 While dealing with distribution of data points in statistical terms, we consider all the data points whose value is either greater than P75 + 1.5 * IQR
 or lesser than P25 - 1.5 * IQR as outliers, where IQR is the Inter Quartile Range and is defined as P75-P25. Thus we plot another figure <a href="#chart4">Chart-4</a> to denote the
-outlier employee proportions in select companies. You may selectively enable or disable to isolate categories by clicking on legend items. The y-axis 
+outlier employee proportions in select cities. You may selectively enable or disable to isolate categories by clicking on legend items. The y-axis 
 represents percentage of H1B population in that year and as you hover over bars, they reveal the outlier wages in respective cities.
 
 <div id="chart4"></div>
