@@ -656,13 +656,20 @@ cph.plot()
 ![KM Estimate](/assets/custom/got_survival_analysis/chart13.png)
 <br/>
 
-The summary statistics above indicates the significance of the covariates in predicting the survival probabilities. 
-The variables such as numOfCharactersInteractedWith and total_screen_time doesn’t hold a significant role in prediction, whereas all the other covariates are significant.
+The summary statistics above indicates the significance of each covariate in predicting the survival probabilities. 
+The values under **exp(coef)** are called hazard ratios (HR). We can interpret HR value as below:
+* HR=1: No effect
+* HR<1: Reduction in Hazard, meaning more safe.
+* HR>1: Increase in Hazard, meaning more risk.
+
+Based on above interpretation, we can make the following observations from the summary above:
+* If the character is kingsguard or have dead relatives or of gender male or belongs to any of the houses such as Lannister, Targaryen etc all have high risk because the HR ratios for all of them are above 2.
+* total_screen_time seems to have no effect at all as HR=1
+* if the character is royal or is served by any, has less risk because HR<1 
 
 ### Final Predictions for Selected Characters
 
-And then, we reach the final section where we make the actual survival predictions using Cox PH model. Here we have done predictions for only few 
-selected characters, but if you wish you may predict any other characters as well.
+And then, we reach the final section where we make the actual survival predictions using Cox PH model. Here we have done predictions for only few selected characters, but if you wish you may predict any other characters as well.
  
 ```python
 df2 = character_df[['character_name']]
@@ -674,7 +681,10 @@ cph.predict_survival_function(tr_rows).plot(use_index=False)
 
 ![KM Estimate](/assets/custom/got_survival_analysis/chart14.png)
 
-From chart above, it seems like Arya Stark and Tyrion Lannister has lesser chance of survival when compared to others.
+From the chart above:
+* Arya Stark and Tyrion Lannister has lesser chance of survival when compared to others. Its quite interesting for Arya because being belonging to Starks should carry lesser risk, but on the other hand she might have buckled up some risk associated in other factors such as number of people killed, have dead relatives etc. 
+* Daenerys has very highest chances of survival. 
+* Interestingly Jaime and Cersei have less risk as well.
 
 Below are the survival probabilities and cumulative hazard scores for the selected characters.
 
@@ -704,10 +714,13 @@ Sansa Stark           0.868832
 Tyrion Lannister      0.731425
 ```
 
+
+
 ## Disclaimer & Code
 Please note that the results published in this case study are solely based on my data analysis and the code I wrote. 
-I would strongly recommend you to use this analysis for educational purposes only but do not use this to base any of your decisions or 
-make any conclusions. Please validate from your sources when possible. If you find any error in the analysis, please feel free to bring it to my notice. Also, please feel free to express any concerns or 
+As GoT has full of twists and surprises, these predictions may not hold good in certain scenarios, this blog is just to be used for 
+educational purpose only but not to make any solid conclusion.
+If you find any error in the analysis, please feel free to bring it to my notice. Also, please feel free to express any concerns or 
 send in any questions or comments. 
 
 All the code used in this analysis can be downloaded from this [github repository](https://github.com/genielab/got_survival_analysis){:target="_blank"}
