@@ -701,6 +701,7 @@ Jon Snow              0.812075
 Sansa Stark           0.868832
 Tyrion Lannister      0.731425
 ```
+
 ## Disclaimer & Code
 Please note that the results published in this case study are solely based on my data analysis and the code I wrote. 
 I would strongly recommend you to use this analysis for educational purposes only but do not use this to base any of your decisions or 
