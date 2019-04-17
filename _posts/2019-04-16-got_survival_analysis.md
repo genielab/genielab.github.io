@@ -672,6 +672,10 @@ cph.predict_survival_function(tr_rows).plot(use_index=False)
 
 ![KM Estimate](/assets/custom/got_survival_analysis/chart14.png)
 
+From chart above, it seems like Arya Stark and Tyrion Lannister has lesser chance of survival when compared to others.
+
+Below are the survival probabilities and cumulative hazard scores for the selected characters.
+
 ```python
 cph.predict_cumulative_hazard(tr_rows,[67])
 ```
