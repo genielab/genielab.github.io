@@ -276,6 +276,8 @@ $$\lambda(t|X) = \lambda_0(t)\exp(\beta_1X_1 + \cdots + \beta_pX_p) = \lambda_0(
 
 where $$\lambda_0(t)$$ is the non-parametric baseline hazard function and $$\bf{\beta}\bf{X}$$ is a linear parametric model using features of the individuals, transformed by an exponential function.
 
+For our analysis further, we would utilize both KM and Cox PH approaches.
+
 ## Kaplan-Meier Model Estimate for GoT characters
 
 ### Data Preparation
@@ -447,12 +449,13 @@ Similarly, we plot for various houses,
 
 ### Data Preparation
 
-After we load data, we create some additional information for every character such as total screen time, number of people killed, is married, 
-have dead relatives, have dead allies etc. 
+As mentioned in <a href="#theory">theory</a> earlier that unlike Kaplan-Meier estimate, Cox PH considers wide range of features 
+from the data points for making predictions, essentially its a regression. Hence we also derive some additional features for the
+data points, for example for a given character we derive additional information such as total screen time, number of people killed, is married or not, have guardian or not, have dead relatives?, have dead allies? etc. 
 
 Also Cox PH model needs all categorical variables to be converted to a dummy/indicator form.  
 
-Some code excerpt is shown below,
+Below is some code excerpt used for transforming and preparing the dataset for Cox PH model,
 
 ```python
 data_path = '/Users/genie/dev/projects/github/got_survival_analysis/data/got_characters_s1_to_s7.csv'
@@ -583,12 +586,11 @@ sns.heatmap(corr,ax = ax,xticklabels=corr.columns,yticklabels=corr.columns,cmap=
 ```
 ![KM Estimate](/assets/custom/got_survival_analysis/chart12.png)
 
-From the chart above, we observe that there is high correlation between the following variable pairs.
-* (have_allies, have_dead_allies)
-* (have_children, is_guardian_for_any)
-* (total_screen_time, number_of_episodes_appeared)
+From the chart above, we observe that there is high correlation between the following variable pairs, (have_allies, have_dead_allies), (have_children, is_guardian_for_any), (total_screen_time, number_of_episodes_appeared)
 
-Also the columns house_Bolton, house_Tyrell, house_Tarly were dropped because of their low variance which might cause convergence problems.
+So we will have to get rid of atleast one in evary variable pair. Thus we drop the following variables **have_allies**, **have_chidren**, **number_of_episodes_appeared**.
+
+Additionally we also drop following variables **house_Bolton**, **house_Tyrell**, **house_Tarly** were dropped because of their low variance which are causing convergence problems for the model.
 
 ```python
 df_dummy = df_dummy.drop(['num_of_episodes_appeared','have_allies','have_children','have_siblings','house_Bolton','house_Tyrell','house_Tarly'], axis=1)
