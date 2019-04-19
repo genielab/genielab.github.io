@@ -16,9 +16,38 @@ categories:
   - Data Stories
 tags:
   - Game of Thrones
-  - GOT
   - Survival Analysis
 permalink: /data-stories/:title/
+keywords:
+  - game of thrones
+  - got
+  - predictions
+  - death prediction
+  - survival prediction
+  - season 8
+  - survival analysis
+  - survival function
+  - survival rate
+  - hazard function
+  - hazard rate
+  - cumulative hazard function
+  - kaplan meier
+  - cox proportional hazard
+  - cox ph
+  - coxph
+  - spoilers
+  - python
+  - pandas
+  - lifelines
+  - data visualizations
+  - plotly
+  - arya stark
+  - sansa stark
+  - jon snow
+  - daenerys targaryen
+  - cersei lannister
+  - tyrion lannister
+  - jaime lannister
 ---
 
 Game of Thrones certainly does not need any introduction. 
