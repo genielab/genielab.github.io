@@ -48,14 +48,15 @@ surprises, who would have guessed Eddard Stark would die so soon, right?
 
 ## Data
 
-The original data comes from this github user [@jeffreylancaster](https://github.com/jeffreylancaster){:target="blank"} who has done an amazing job of compiling all the data scene by scene
+The original data comes from this github user [@jeffreylancaster](https://github.com/jeffreylancaster){:target="_blank"} who has done an amazing job of compiling all the data scene by scene
 and for all seasons. 
 
 But this data is in json format, so we transform it to csv which is more usable for our analysis, and also in the 
 process, we create some additional information for every character such as their screen times in every season, number of people they killed per season, eigenvector centrality based on
 screen time in every season etc. 
  
-The final transformed data (csv) is published in this [github repository](https://github.com/genielab/got_survival_analysis){:target="_blank"}
+The final transformed data (csv) is published in this 
+[github repository](https://github.com/genielab/got_survival_analysis){:target="_blank"}
   
 ## Important Characters
 
