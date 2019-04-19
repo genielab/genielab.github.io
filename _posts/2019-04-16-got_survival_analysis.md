@@ -23,6 +23,8 @@ keywords:
   - got
   - predictions
   - death prediction
+  - machine learning
+  - data science
   - survival prediction
   - season 8
   - survival analysis
