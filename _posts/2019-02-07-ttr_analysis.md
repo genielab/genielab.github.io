@@ -19,7 +19,26 @@ tags:
   - Network Analysis
 permalink: /data-stories/:title/
 custom_js :
-    - assets/custom/ttr_main.js
+  - assets/custom/ttr_main.js
+keywords:
+  - ticket to ride
+  - ticket-to-ride
+  - ttr
+  - boardgames
+  - board games
+  - strategy games
+  - python
+  - pandas
+  - network analysis
+  - networkx
+  - centrality
+  - data visualizations
+  - bokeh
+  - route profitability
+  - destination cards
+  - alternate scoring
+  - blocking strategies
+  - longest route
 ---
 
 Ticket-to-ride board game is one of the good strategic games out there and it requires that players need a lot of 
