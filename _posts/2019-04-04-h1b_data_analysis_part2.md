@@ -19,6 +19,45 @@ tags:
   - Immigration
   - H1B Visa
 permalink: /data-stories/:title/
+keywords: 
+  - h1b
+  - visa
+  - temporary work visa
+  - work permit
+  - uscis
+  - case petitions
+  - exploratory data analysis
+  - eda
+  - python
+  - pandas
+  - data visualizations
+  - plotly
+  - income inequality
+  - gini
+  - wage analysis
+  - salary analysis
+  - median income
+  - outliers
+  - oflc
+  - numbeo
+  - cost of living
+  - coli
+  - cost of living index
+  - rent index
+  - local purchasing power
+  - inflation
+  - zillow
+  - house affordability index
+  - house affordability
+  - zillow home value index
+  - zhvi
+  - zillow rent index
+  - zri
+  - real income
+  - consumer price index
+  - cpi
+  - bureau of labor statistics
+  - bls 
 ---
 
 <i>This blog is part-2 of a 2-part series of blogs on data analysis and exploration on H-1B visa public dataset.</i>
